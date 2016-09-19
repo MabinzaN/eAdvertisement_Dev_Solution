@@ -1,0 +1,50 @@
+﻿@model IEnumerable<eAdertisement.Models.Vacancy>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+<p>
+    @Html.ActionLink("Create New Vacancy", "Create")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            Position
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+            Closing Date
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Post)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Centre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClosingDate)
+        </td>
+        <td>
+            @Html.ActionLink("Update", "Edit", new { id=item.VacancyId }) |
+            @Html.ActionLink("View", "Details", new { id=item.VacancyId })
+        </td>
+    </tr>
+}
+
+</table>

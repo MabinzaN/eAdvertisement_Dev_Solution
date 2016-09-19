@@ -92,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\eAdertisement\eAdertisement.csproj">
+    <ProjectReference Include="..\eAdertisement\eAdvertisement.csproj">
       <Project>{34C45A0A-CC7A-4CCC-9ADD-0373FB90AE25}</Project>
-      <Name>eAdertisement</Name>
+      <Name>eAdvertisement</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

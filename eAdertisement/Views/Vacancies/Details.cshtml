@@ -1,0 +1,28 @@
+﻿@model eAdertisement.Models.Vacancy
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+    <hr />
+
+    <h2>Job Description</h2>
+
+    <blockquote>
+        <h4><b>@Html.DisplayFor(model => model.Post), Level @Html.DisplayFor(model => model.Level) (Ref#. @Html.DisplayFor(model => model.ReferenceNo))</b></h4>
+        <p><b>@Html.DisplayFor(model => model.Department.Name)</b>, @Html.DisplayFor(model => model.Centre)</p>
+        <p><b>Application: </b>@Html.DisplayFor(model => model.Application)</p>
+        <p><b>Note: </b>@Html.DisplayFor(model => model.Note)</p>
+        <p><b>Duties: </b>@Html.DisplayFor(model => model.Duties)</p>
+        <p><b>Attention: </b> @Html.DisplayFor(model => model.Attention), @Html.DisplayFor(model => model.Telephone)</p>
+        <p><b>Closing date: </b>@Html.DisplayFor(model => model.ClosingDate)</p>
+        <p>Salary: @Html.DisplayFor(model => model.Salary)</p>      
+    </blockquote>
+  
+    
+<p>
+    @Html.ActionLink("Update", "Edit", new { id = Model.VacancyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

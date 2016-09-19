@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAdertisement", "eAdertisement\eAdertisement.csproj", "{34C45A0A-CC7A-4CCC-9ADD-0373FB90AE25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAdvertisement", "eAdertisement\eAdvertisement.csproj", "{34C45A0A-CC7A-4CCC-9ADD-0373FB90AE25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAdertisement.Tests", "eAdertisement.Tests\eAdertisement.Tests.csproj", "{60149364-CC19-4BBA-AA57-A7614B6D694B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eAdvertisement.Tests", "eAdertisement.Tests\eAdvertisement.Tests.csproj", "{60149364-CC19-4BBA-AA57-A7614B6D694B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
