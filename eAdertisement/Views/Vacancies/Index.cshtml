@@ -1,50 +1,105 @@
 ﻿@model IEnumerable<eAdertisement.Models.Vacancy>
 
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<hr />
-<p>
-    @Html.ActionLink("Create New Vacancy", "Create")
-</p>
-<table class="table table-hover">
-    <tr>
-        <th>
-            Position
-        </th>
-        <th>
-            Department
-        </th>
-        <th>
-            Location
-        </th>
-        <th>
-            Closing Date
-        </th>
-    </tr>
+<header class="page-header">
+</header>
+<h3>Official Government Jobs Portal</h3>
+<div class="jumbotron">
+    <div class="row">
+        <article class="col-md-3" role="article">
+            <div class="form-group">
+                <label for="Description">What</label>
+                <input type="text" class="form-control" id="Description" placeholder="What are you looking for?" />
+            </div>
+        </article>
+        <article class="col-md-3" role="article">
+            <div class="form-group">
+                <label for="Description">Where</label>
+                <input type="text" class="form-control" id="Location" placeholder="City, District or Province" />
+            </div>
+        </article>
+        <article class="col-md-3" role="article">
+            <div class="form-group">
+                <label for="Description">Level</label>
+                <select class="form-control">
+                    <option>Select Level</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                </select>
+            </div>
+        </article>
+        <article class="col-md-3" role="article">
+            <div class="form-group">
+                <label for="Description">Search</label>
+                <button type="button" class="btn btn-success form-control" id="Search">Search for Government Vacancy</button>
+            </div>
+        </article>
+    </div>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Post)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Centre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClosingDate)
-        </td>
-        <td>
-            @Html.ActionLink("Update", "Edit", new { id=item.VacancyId }) |
-            @Html.ActionLink("View", "Details", new { id=item.VacancyId })
-        </td>
-    </tr>
-}
+<h3>Available Public Sector Jobs</h3>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12" role="article">
+            <p>Job Description</p>
+            <table class="table table-hover">
+                <tr>
+                    <th>
+                        Position
+                    </th>
+                    <th>
+                        Centre
+                    </th>
+                    <th>
+                        Department
+                    </th>
+                    <th>
+                        Reference #.
+                    </th>
+                    <th>
+                        Closing date
+                    </th>
+                    <th></th>
+                </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Post)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Centre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department.Name)
+                    </td>'
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReferenceNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClosingDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("View", "Details", new { id = item.VacancyId })
+                    </td>
+                </tr>
+            }
 
-</table>
+            </table>
+        </div>
+    </div>
+</div>
+
+

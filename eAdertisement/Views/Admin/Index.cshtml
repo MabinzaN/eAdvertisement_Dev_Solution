@@ -1,0 +1,130 @@
+﻿@model IEnumerable<eAdertisement.Models.Vacancy>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpiredVacancy.Post)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PendingVacancy.Post)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishedVacancy.Post)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnpublishedVacancy.Post)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Post)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attention)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClosingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Centre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Application)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Requirements)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Note)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duties)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReferenceNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Level)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpiredVacancy.Post)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PendingVacancy.Post)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishedVacancy.Post)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnpublishedVacancy.Post)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Post)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attention)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClosingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Centre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Application)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Requirements)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duties)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReferenceNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Level)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VacancyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VacancyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VacancyId })
+        </td>
+    </tr>
+}
+
+</table>

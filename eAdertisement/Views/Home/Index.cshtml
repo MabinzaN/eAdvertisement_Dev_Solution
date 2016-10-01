@@ -1,26 +1,28 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<eAdertisement.Models.Vacancy>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<header class="page-header">
-    <h1><span aria-hidden="true" class="fa fa-users"></span> @ViewBag.Title</h1>
-</header>
-<h3>Official Government Jobs Portal</h3>
+<hr />
+<h3>Government Job Portal</h3>
 <div class="jumbotron">
     <div class="row">
-        <article class="col-md-4" role="article">
+        <article class="col-md-3" role="article">
             <div class="form-group">
                 <label for="Description">What</label>
                 <input type="text" class="form-control" id="Description" placeholder="What are you looking for?" />
             </div>
         </article>
-        <article class="col-md-4" role="article">
+        <article class="col-md-3" role="article">
             <div class="form-group">
                 <label for="Description">Where</label>
-                <input type="text" class="form-control" id="Location" placeholder="City, District or Province" />
+                <input type="text" class="form-control" id="Location" placeholder="City or Province" />
             </div>
         </article>
-        <article class="col-md-4" role="article">
+        <article class="col-md-3" role="article">
             <div class="form-group">
                 <label for="Description">Level</label>
                 <select class="form-control">
@@ -38,14 +40,57 @@
                 </select>
             </div>
         </article>
+        <article class="col-md-3" role="article">
+            <div class="form-group">
+                <label for="Search">Search</label>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">Search Governmnet Jobs</button>
+                </span>
+            </div>
+        </article>
     </div>
     <div class="row">
+
+        <h3>Available Public Sector Jobs</h3>
+
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    Position
+                </th>
+                <th>
+                    Department
+                </th>
+                <th>
+                    Location
+                </th>
+                <th>
+                    Closing Date
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Post)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Centre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClosingDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("View", "Details", new { id = item.VacancyId })
+                    </td>
+                </tr>
+            }
+
+        </table>
 
     </div>
 </div>
-
-<h3>Available Public Sector Jobs</h3>
-    <div class="row">
-        
-
-    </div>

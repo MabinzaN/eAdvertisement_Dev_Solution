@@ -20,6 +20,38 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.ExpiredVacancy.Post)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpiredVacancy.Post)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PendingVacancy.Post)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PendingVacancy.Post)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishedVacancy.Post)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishedVacancy.Post)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnpublishedVacancy.Post)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnpublishedVacancy.Post)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Post)
         </dt>
 
@@ -118,5 +150,6 @@
     </dl>
 </div>
 <p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VacancyId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
